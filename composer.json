@@ -7,6 +7,8 @@
             "Darraghb\\Bottler\\": "src/"
         }
     },
+    "license": "MIT",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Darragh Blake",

@@ -1,0 +1,17 @@
+{
+    "name": "darraghb/bottler",
+    "description": "A package to find bottlenecks in your php project.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Darraghb\\Bottler\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Darragh Blake",
+            "email": "darragh.blake@gmail.com"
+        }
+    ],
+    "require": {}
+}

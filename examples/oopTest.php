@@ -4,21 +4,20 @@ require_once '../vendor/autoload.php';
 
 use Darraghb\Bottler\Bottler;
 
-$bottler = new Bottler(
+class Test 
+{
+
+pulic function __construct()
+{
+	$bottler = new Bottler(
 	['unit' => 'seconds', 
-	'fileName' => __FILE__]);
-
-$bottler->staticPerformance('mySlowTest', 20, 500000);
-
+	'fileName' => __FILE__],
+	'this' => $this);
+}
 
 function myTest()
 {
-	$ans = '';
-	for ($i=0; $i < 1000; $i++) { 
-		$ans = $i;
-	}
-
-	return $ans;
+	$bottler->performance('mySlowTest', 20, 500000);
 }
 
 
@@ -28,4 +27,6 @@ function mySlowTest($start= false, $loop = false)
 	for ($i=0; $i < $loop; $i++) { 
 		$ans = $i;
 	}
+}
+
 }

@@ -8,9 +8,8 @@ $bottler = new Bottler(
 	['unit' => 'seconds', 
 	'fileName' => __FILE__]);
 
-$bottler->performance('mySlowTest', 20, 5000);
+$bottler->staticPerformance('mySlowTest', 20, 5000);
 
-$bottler->performance();
 
 function myTest()
 {

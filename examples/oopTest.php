@@ -7,21 +7,23 @@ use Darraghb\Bottler\Bottler;
 class Test 
 {
 
-pulic function __construct()
+function __construct()
 {
-	$bottler = new Bottler(
+	$this->bottler = new Bottler(
 	['unit' => 'seconds', 
-	'fileName' => __FILE__],
-	'this' => $this);
+	'fileName' => __FILE__,
+	'this' => $this]);
+
+	$bottler = $this->bottler;
 }
 
-function myTest()
+public function myTest()
 {
-	$bottler->performance('mySlowTest', 20, 500000);
+	$this->bottler->performance('mySlowTestOOP', 20, 500000);
 }
 
 
-function mySlowTest($start= false, $loop = false)
+public function mySlowTestOOP($start= false, $loop = false)
 {
 	$ans = '';
 	for ($i=0; $i < $loop; $i++) { 
@@ -30,3 +32,6 @@ function mySlowTest($start= false, $loop = false)
 }
 
 }
+
+$test = new Test();
+echo $test->myTest();
